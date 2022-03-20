@@ -21,7 +21,14 @@ public class Student implements Serializable{
 	
 	private String name;
 	private String grade;
+	private String section;
 	
+	public String getSection() {
+		return section;
+	}
+	public void setSection(String section) {
+		this.section = section;
+	}
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="student_id")
 	private List<Book> booksList;
