@@ -32,6 +32,11 @@ public class BookDao {
       	  book.setTitle(title);
     	  book.setAuthor(author);
     	  book.setPrice(price);
+    	  
+    	  Book book1=new Book();
+      	  book1.setTitle(title);
+    	  book1.setAuthor(author);
+    	  book1.setPrice(price);
             
             session.save(book);
             transaction.commit();
