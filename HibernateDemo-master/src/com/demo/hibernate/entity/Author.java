@@ -27,8 +27,15 @@ public class Author implements Serializable {
 	private int authorId;
 	private String name;	
 	private String lastName;
+	private String language;
 	
 	
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
+	}
 	/**
 	 * @return the authorId
 	 */
