@@ -3,6 +3,7 @@
  **#################################################################*/
 package com.demo.hibernate.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -10,6 +11,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.Query;
 import com.demo.hibernate.entity.Book;
+import com.demo.hibernate.entity.Employee;
+import com.demo.hibernate.entity.EmployeeEntity;
+import com.demo.hibernate.entity.Person;
 import com.demo.hibernate.entity.Student;
 import com.demo.hibernate.utility.HibernateUtil;
 
@@ -102,5 +106,34 @@ public class BookDao {
         session.close();
         return rowCount;
     }
+    
+    public void saveEmployee(Employee emp) {
+    	Session session = HibernateUtil.getSession(); 
+        Transaction tx = session.beginTransaction();
+        Serializable emp2 =   session.save(emp);
+        
+        System.out.println("Employee Saved Successfully: ");
+        tx.commit();
+        session.close();
+    }
 	
+    
+    public void savePersonAndPan(Person person) {
+    	Session session = HibernateUtil.getSession(); 
+        Transaction tx = session.beginTransaction();
+        Serializable emp2 =   session.save(person);
+        
+        System.out.println("Employee Saved Successfully: ");
+        tx.commit();
+        session.close();
+    }
+    public void saveEmployeeAccount(EmployeeEntity emp) {
+    	Session session = HibernateUtil.getSession(); 
+        Transaction tx = session.beginTransaction();
+        Serializable emp2 =   session.save(emp);
+        
+        System.out.println("Employee Saved Successfully: ");
+        tx.commit();
+        session.close();
+    }
 }

@@ -7,7 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.demo.hibernate.dao.BookDao;
+import com.demo.hibernate.entity.AccountEntity;
 import com.demo.hibernate.entity.Book;
+import com.demo.hibernate.entity.Employee;
+import com.demo.hibernate.entity.EmployeeEntity;
+import com.demo.hibernate.entity.Pancard;
+import com.demo.hibernate.entity.Person;
+import com.demo.hibernate.entity.Project;
 import com.demo.hibernate.entity.Student;
 
 /**#################################################################
@@ -27,27 +33,20 @@ public class Main {
 	 */
 	public static void main(String[] args) 
 	 {
-		List<Book> bookList = new ArrayList<Book>();
 		BookDao b=new BookDao();
-		Book book1=new Book();
-		Book book2=new Book();
-		book1.setAuthor("Siva");
-		book1.setPrice(234);
-		book1.setTitle("Good To Read");
+			
+		EmployeeEntity emp=new  EmployeeEntity();
+		emp.setFirstName("Prasanth");
+		emp.setLastName("Kumar");
+		emp.setEmaiAddrs("prasanth@gmai.com");
 		
-		book2.setAuthor("Kumar");
-		book2.setPrice(600);
-		book2.setTitle("GodIsHere");		
-		bookList.add(book1);
-		bookList.add(book2);
+		AccountEntity account = new AccountEntity();
+		account.setAccountNo("82376487-5355");
 		
+		emp.setAccount(account);
 		
-		Student std  = new Student();
-				std.setGrade("third");
-		        std.setName("Gowri");
-		        std.setBooksList(bookList);
-		        
-		        b.saveStudent(std);
+		b.saveEmployeeAccount(emp);
+		
 		
 		
 	 }
