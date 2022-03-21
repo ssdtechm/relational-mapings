@@ -30,6 +30,7 @@ public class Book implements Serializable {
 	
 	private String author;
 	private double price;
+	private String publisher;
 	
 	@ManyToOne
 	private Student student;
