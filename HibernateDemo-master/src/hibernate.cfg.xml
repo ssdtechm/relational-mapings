@@ -27,6 +27,8 @@
             <mapping class="com.demo.hibernate.entity.Book"/>
              <mapping class="com.demo.hibernate.entity.Author"/>
               <mapping class="com.demo.hibernate.entity.Student"/>
+              <mapping class="com.demo.hibernate.entity.Person"/>
+              <mapping class="com.demo.hibernate.entity.Account"/>
             
     </session-factory>
 </hibernate-configuration>

@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.Query;
 import com.demo.hibernate.entity.Book;
+import com.demo.hibernate.entity.Person;
 import com.demo.hibernate.entity.Student;
 import com.demo.hibernate.utility.HibernateUtil;
 
@@ -52,6 +53,25 @@ public class BookDao {
          
             
             session.save(std);
+            transaction.commit();
+            System.out.println("Records inserted sucessessfully");
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+	
+	
+	public void savePersonDetails(Person p){
+        Session session = HibernateUtil.getSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+         
+            
+            session.save(p);
             transaction.commit();
             System.out.println("Records inserted sucessessfully");
         } catch (HibernateException e) {
