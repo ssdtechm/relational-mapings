@@ -13,7 +13,9 @@ import org.hibernate.Query;
 import com.demo.hibernate.entity.Book;
 import com.demo.hibernate.entity.Employee;
 import com.demo.hibernate.entity.EmployeeEntity;
+import com.demo.hibernate.entity.IssueBank;
 import com.demo.hibernate.entity.Person;
+import com.demo.hibernate.entity.Project;
 import com.demo.hibernate.entity.Student;
 import com.demo.hibernate.utility.HibernateUtil;
 
@@ -136,4 +138,18 @@ public class BookDao {
         tx.commit();
         session.close();
     }
+    
+    public void saveProjectEmployee(Project pro) {
+    	
+      	Session session = HibernateUtil.getSession(); 
+        Transaction tx = session.beginTransaction();
+        Serializable emp2 =   session.save(pro);
+        
+        System.out.println("Employee Saved Successfully: ");
+        tx.commit();
+        session.close();
+    	
+    }
+    
+     
 }

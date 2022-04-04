@@ -10,16 +10,19 @@
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
 		<!-- SQL dialect -->
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
 		<!-- Enable Hibernate's automatic session context management -->
 		<property name="current_session_context_class">thread</property>
 
 		<!-- Disable the second-level cache -->
-		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
 
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">true</property>
+		
+		<property name="hibernate.cache.use_query_cache">true</property>
 
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">update</property>
@@ -33,5 +36,18 @@
 		<mapping class="com.demo.hibernate.entity.Pancard" />
 		<mapping class="com.demo.hibernate.entity.EmployeeEntity" />
 		<mapping class="com.demo.hibernate.entity.AccountEntity" />
+		<mapping class="com.demo.hibernate.entity.Passport" />
+		<mapping class="com.demo.hibernate.entity.Address" />
+		<mapping class="com.demo.hibernate.entity.Product" />
+		<mapping class="com.demo.hibernate.entity.Customer" />
+		<mapping class="com.demo.hibernate.entity.IssueBank" />
+		<mapping class="com.demo.hibernate.entity.CreditCard" />
+		<mapping class="com.demo.hibernate.entity.Car" />
+		<mapping class="com.demo.hibernate.entity.Pen" />
+
+
+
+
+
 	</session-factory>
 </hibernate-configuration>

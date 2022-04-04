@@ -16,15 +16,14 @@ public class AccountEntity {
 	
 	private String accountNo;
 	
-	@OneToOne(mappedBy = "account")
-	private EmployeeEntity empEntity;
+	private int bankId;
 	
 	
-	public EmployeeEntity getEmpEntity() {
-		return empEntity;
+	public int getBankId() {
+		return bankId;
 	}
-	public void setEmpEntity(EmployeeEntity empEntity) {
-		this.empEntity = empEntity;
+	public void setBankId(int bankId) {
+		this.bankId = bankId;
 	}
 	public Long getId() {
 		return id;
